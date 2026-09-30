@@ -19,6 +19,10 @@ SahkaarX learning portfolio
    - [practice/week-02-simulate-and-resolve-merge-conflict](practice/week-02-simulate-and-resolve-merge-conflict/README.md)
    - Simulated parallel feature branches (`feature/task-notifications` and `feature/task-activity-audit`), merge conflict triggering in `tasks/services.py`, manual conflict marker removal, harmonious dual-feature integration, and clean merge commit into `main`.
 
-5. **Week 03 - Resolve Merge Conflict and Document Best Practices**:
+5. **Week 03 - Establish Repository Structure and Branching Strategy**:
+   - [practice/week-03-establish-repository-structure-and-branching-str](practice/week-03-establish-repository-structure-and-branching-str/README.md)
+   - Enterprise Django repository architecture, logical separation of apps (`core`, `tasks`), configs (`backend/`), and centralized utilities (`utils/`), comprehensive branching strategy guide ([BRANCHING_STRATEGY.md](practice/week-03-establish-repository-structure-and-branching-str/BRANCHING_STRATEGY.md)), atomic commit history, and development environment setup instructions.
+
+6. **Week 03 - Resolve Merge Conflict and Document Best Practices**:
    - [practice/week-03-resolve-merge-conflict-and-document-best-practic](practice/week-03-resolve-merge-conflict-and-document-best-practic/README.md)
    - Conflict resolution simulation between `feature/task-rate-limiting` and `feature/task-retry-policy` on `tasks/services.py`, manual conflict marker excision, and comprehensive repository-wide [CONTRIBUTING.md](CONTRIBUTING.md) guide covering 5 real-world merge conflict scenarios and Git hygiene best practices.
