@@ -14,3 +14,7 @@ SahkaarX learning portfolio
 3. **Week 02 - Merge Feature Branch with Code Review**:
    - [practice/week-02-merge-feature-branch-with-code-review](practice/week-02-merge-feature-branch-with-code-review/README.md)
    - Advanced feature branch (`feature/task-priority-and-review-feedback`), 3 atomic commits, Team Lead peer code review threads, addressed feedback implementation, and conflict-free merge into `main` (Pull Request #2).
+
+4. **Week 02 - Simulate and Resolve Merge Conflict**:
+   - [practice/week-02-simulate-and-resolve-merge-conflict](practice/week-02-simulate-and-resolve-merge-conflict/README.md)
+   - Simulated parallel feature branches (`feature/task-notifications` and `feature/task-activity-audit`), merge conflict triggering in `tasks/services.py`, manual conflict marker removal, harmonious dual-feature integration, and clean merge commit into `main`.

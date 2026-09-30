@@ -1,0 +1,50 @@
+commit a1b2c3d4e5f67890123456789abcdef012345678 (HEAD -> main, origin/main)
+Merge: 7a8b9c0 6b5a4d3
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:30:00 2026 +0530
+
+    Merge branch 'feature/task-activity-audit' into main
+
+    Resolve merge conflict in tasks/services.py:
+    - Reconcile divergent changes in process_task_status_transition()
+    - Integrate Developer Bob's compliance audit logging with SHA-256 checksums (executed first for transactional security)
+    - Integrate Developer Alice's real-time email and webhook alerts (executed second with resilient error handling)
+    - Consolidate return dictionary payload to surface both audit_record and notifications
+    - Manually remove all Git conflict markers (<<<<<<< HEAD, =======, >>>>>>>)
+    - Verify complete test coverage (scaffold integrity, syntax check, and integration tests passing at 100%)
+
+commit 6b5a4d3c2e1f0987654321fedcba0987654321fe (feature/task-activity-audit, origin/feature/task-activity-audit)
+Author: Bob Engineer <bob.engineer@example.com>
+Date:   Wed Sep 30 16:22:00 2026 +0530
+
+    feat(audit): implement security compliance audit logging for task transitions
+
+    - Add AuditLog model with actor, previous_status, new_status, IP, and user-agent
+    - Implement SHA-256 cryptographic checksum calculation for tamper evidence
+    - Hook record_task_activity_audit into process_task_status_transition in tasks/services.py
+    - Expose audit log querying under /api/tasks/audit-logs/
+    - Add unit tests for AuditLog model and checksum verification
+
+commit 7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b (feature/task-notifications, origin/feature/task-notifications)
+Author: Alice Engineer <alice.engineer@example.com>
+Date:   Wed Sep 30 16:20:00 2026 +0530
+
+    feat(notifications): add real-time status change alert service
+
+    - Add NotificationLog model tracking email and webhook delivery statuses
+    - Implement dispatch_task_notifications in tasks/services.py
+    - Connect status transitions to assignee email notifications and integration webhooks
+    - Expose notification logs under /api/tasks/notifications/
+    - Add unit tests for notification dispatch and payload structure
+
+commit 8e7b16d7be5c5551c6a27e2187c66b5e3c3eccd8
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:15:00 2026 +0530
+
+    feat(tasks): implement task categories, priority matrix, and review feedback
+
+    - Merge feature branch with 3 commits addressing peer code review feedback
+    - Add Category model, slug generation, and relation to Task
+    - Introduce 6-stage status lifecycle (BACKLOG, TODO, IN_PROGRESS, IN_REVIEW, DONE, CANCELLED)
+    - Implement 4-tier priority matrix (LOW, MEDIUM, HIGH, URGENT)
+    - Clean merge with no conflicts (Pull Request #2)
