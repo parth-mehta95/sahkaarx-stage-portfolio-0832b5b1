@@ -1,2 +1,16 @@
 # sahkaarx-stage-portfolio-0832b5b1
 SahkaarX learning portfolio
+
+## Practice Modules & Milestones
+
+1. **Week 01 - Initialize Django Backend Repository on GitHub**:
+   - [practice/week-01-initialize-django-backend-repository-on-github](practice/week-01-initialize-django-backend-repository-on-github/README.md)
+   - Public repository setup, Django scaffold, manage.py, and initial commit history.
+
+2. **Week 01 - Create and Review Your First Pull Request**:
+   - [practice/week-01-create-and-review-your-first-pull-request](practice/week-01-create-and-review-your-first-pull-request/README.md)
+   - Feature branching workflow, basic tasks application scaffold, Pull Request #1, and clean merge.
+
+3. **Week 02 - Merge Feature Branch with Code Review**:
+   - [practice/week-02-merge-feature-branch-with-code-review](practice/week-02-merge-feature-branch-with-code-review/README.md)
+   - Advanced feature branch (`feature/task-priority-and-review-feedback`), 3 atomic commits, Team Lead peer code review threads, addressed feedback implementation, and conflict-free merge into `main` (Pull Request #2).

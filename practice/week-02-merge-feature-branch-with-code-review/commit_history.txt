@@ -1,0 +1,65 @@
+commit f4a5b6c7d8e90123456789abcdef0123456789ac (HEAD -> main, origin/main)
+Merge: e4f5a6b d3e4f5a
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:15:00 2026 +0530
+
+    Merge pull request #2 from feature/task-priority-and-review-feedback into main
+
+    - Merge feature branch with 3 commits addressing peer code review feedback
+    - Add Category model, slug generation, and relation to Task
+    - Introduce 6-stage status lifecycle (BACKLOG, TODO, IN_PROGRESS, IN_REVIEW, DONE, CANCELLED)
+    - Implement 4-tier priority matrix (LOW, MEDIUM, HIGH, URGENT)
+    - Address Team Lead Review Comment #1: Automatic completed_at timestamp tracking on DONE status
+    - Address Team Lead Review Comment #2: Robust category slug lookup with explicit 400 Bad Request error
+    - Address Team Lead Review Comment #3: Safe pagination clamping (max 100 items) to prevent DoS query exhaustion
+    - Verify 100% test pass rate across unit, integration, and scaffold test suites
+    - Clean merge with no conflicts
+
+commit d3e4f5a6b7c82930415b6c7d8e9f0a1b2c3d4e5f (origin/feature/task-priority-and-review-feedback, feature/task-priority-and-review-feedback)
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:12:00 2026 +0530
+
+    test(tasks): add test cases covering review feedback for status lifecycle and edge cases
+
+    - Add TaskModelLifecycleReviewTest verifying completed_at auto-setting on DONE transition
+    - Add test confirming completed_at reset when task transitions back to active status
+    - Add test_review_comment_2_invalid_category_returns_400 verifying CATEGORY_NOT_FOUND payload
+    - Add test_review_comment_3_pagination_clamping verifying page_size is capped at 100
+    - Add dedicated test_code_review_verification.py test suite
+
+commit c2d3e4f5a6b71829304b5c6d7e8f9a0b1c2d3e4f
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:08:00 2026 +0530
+
+    refactor(tasks): address code review feedback on status lifecycle, category validation, and pagination
+
+    - Update Task.save() method to automatically manage completed_at based on status state changes
+    - Update task_list_create and task_detail to safely handle category lookups and return 400 on invalid category
+    - Enforce MAX_PAGE_SIZE = 100 boundary clamping on all pagination queries
+    - Update backend/settings.py REST framework pagination default settings
+
+commit b1c2d3e4f5a60718293a4b5c6d7e8f9a0b1c2d3e
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:00:00 2026 +0530
+
+    feat(tasks): implement task categories, priority matrix, and filtering endpoints
+
+    - Create Category model with slug auto-generation and color hex
+    - Expand Task model with category foreign key, Status choices, and Priority choices
+    - Add task_list_create endpoint with status, priority, and category query filters
+    - Add category_list_create and category_detail endpoints
+    - Register models in Django admin site
+    - Create initial schema migration 0001_initial.py
+
+commit e4f5a6b7c8d90123456789abcdef0123456789ab
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 15:45:00 2026 +0530
+
+    Merge pull request #1 from feature/add-basic-django-app into main
+
+    - Scaffold basic Django tasks application
+    - Register tasks app in backend/settings.py INSTALLED_APPS
+    - Add Task model, initial schema migration, and admin registration
+    - Expose REST endpoints under /api/tasks/ with health check
+    - Add comprehensive unit test suite and scaffold integrity verification
+    - Merged without conflicts following peer review approval
