@@ -26,3 +26,8 @@ SahkaarX learning portfolio
 6. **Week 03 - Resolve Merge Conflict and Document Best Practices**:
    - [practice/week-03-resolve-merge-conflict-and-document-best-practic](practice/week-03-resolve-merge-conflict-and-document-best-practic/README.md)
    - Conflict resolution simulation between `feature/task-rate-limiting` and `feature/task-retry-policy` on `tasks/services.py`, manual conflict marker excision, and comprehensive repository-wide [CONTRIBUTING.md](CONTRIBUTING.md) guide covering 5 real-world merge conflict scenarios and Git hygiene best practices.
+
+7. **Week 04 - Implement Multiple Feature Branches with Atomic Commits**:
+   - [practice/week-04-implement-multiple-feature-branches-with-atomic](practice/week-04-implement-multiple-feature-branches-with-atomic/README.md)
+   - Creation of 3 isolated feature branches (`feature/auth-setup`, `feature/database-models`, `feature/api-endpoints`) with 2-3 atomic commits each following Conventional Commits, clean conflict-free mergeability into `main`, and comprehensive Git branch documentation.
+
