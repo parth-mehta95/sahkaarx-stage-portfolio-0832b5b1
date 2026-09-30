@@ -1,0 +1,37 @@
+commit e4f5a6b7c8d90123456789abcdef0123456789ab (HEAD -> main, origin/main)
+Merge: aed5756 9c8b7a6
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 15:45:00 2026 +0530
+
+    Merge pull request #1 from feature/add-basic-django-app into main
+
+    - Scaffold basic Django tasks application
+    - Register tasks app in backend/settings.py INSTALLED_APPS
+    - Add Task model, initial schema migration, and admin registration
+    - Expose REST endpoints under /api/tasks/ with health check
+    - Add comprehensive unit test suite and scaffold integrity verification
+    - Merged without conflicts following peer review approval
+
+commit 9c8b7a6f5e4d3c2b1a0987654321fedcba098765 (feature/add-basic-django-app, origin/feature/add-basic-django-app)
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 15:40:00 2026 +0530
+
+    feat(tasks): scaffold basic Django tasks app with models, views, and tests
+
+    - Add tasks app via python manage.py startapp
+    - Configure TasksConfig and register in project settings
+    - Implement Task model with status, priority, and completion helpers
+    - Add views for task listing, creation, details, updates, and deletion
+    - Configure URL routing under /api/tasks/
+    - Add unit tests for Task model, views, and scaffold validation
+
+commit aed5756195e9f0949ac5d2514f756ff5f0cf31ad
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 15:30:00 2026 +0530
+
+    feat(backend): initialize Django project scaffold and repository structure
+
+    - Configure manage.py administrative utility
+    - Add backend project settings, urls, wsgi, and asgi modules
+    - Configure .env.example, .gitignore, and requirements.txt
+    - Set up base project repository on main branch
