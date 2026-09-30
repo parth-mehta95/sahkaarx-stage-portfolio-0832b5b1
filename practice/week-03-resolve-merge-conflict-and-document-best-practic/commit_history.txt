@@ -1,0 +1,45 @@
+commit e5f6a7b8c9d0123456789abcdef0123456789abc (HEAD -> main, origin/main)
+Merge: 1a2b3c4 5d6e7f8
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 17:00:00 2026 +0530
+
+    Merge branch 'feature/task-retry-policy' into main
+
+    Resolve merge conflict in tasks/services.py:
+    - Reconcile divergent implementations in execute_task_pipeline()
+    - Sequence Developer Claire's token-bucket rate limiting check first to fast-fail on quota exhaustion
+    - Sequence Developer Dave's exponential backoff and dead-letter routing second to guard execution
+    - Consolidate telemetry payload returning both rate_limit and retry_policy execution summaries
+    - Manually remove all Git conflict markers (<<<<<<< HEAD, =======, >>>>>>>)
+    - Verify 100% test pass rate across unit, scaffold, and conflict resolution test suites
+
+commit 5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e (feature/task-retry-policy, origin/feature/task-retry-policy)
+Author: Dave Engineer <dave.engineer@example.com>
+Date:   Wed Sep 30 16:52:00 2026 +0530
+
+    feat(retry): implement exponential backoff and dead-letter queue routing
+
+    - Add RetryPolicyLog model to track attempt count, backoff delays, and failure statuses
+    - Implement calculate_exponential_backoff with 2^n multiplier and upper bound clamping
+    - Implement execute_with_retry_policy wrapper supporting transient error retries
+    - Integrate retry protection into execute_task_pipeline in tasks/services.py
+    - Expose retry diagnostic queries at /api/tasks/retry-logs/
+    - Add comprehensive unit tests in tasks/tests.py
+
+commit 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b (feature/task-rate-limiting, origin/feature/task-rate-limiting)
+Author: Claire Engineer <claire.engineer@example.com>
+Date:   Wed Sep 30 16:48:00 2026 +0530
+
+    feat(rate-limit): enforce client quota and token bucket throttling
+
+    - Add RateLimitLog model tracking client identifiers, window counts, and throttle states
+    - Implement check_rate_limit service evaluating sliding window request quotas
+    - Integrate rate limiting fast-fail check into execute_task_pipeline in tasks/services.py
+    - Expose client quota monitoring endpoint at /api/tasks/rate-limits/
+    - Add rate limit validation tests in tasks/tests.py
+
+commit c39ebec805b5865f82a7cce70f38e11711222a16
+Author: Parth Mehta <parth.mehta@example.com>
+Date:   Wed Sep 30 16:38:00 2026 +0530
+
+    feat(week-02): complete simulate and resolve merge conflict practice milestone

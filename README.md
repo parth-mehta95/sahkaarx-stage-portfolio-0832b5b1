@@ -18,3 +18,7 @@ SahkaarX learning portfolio
 4. **Week 02 - Simulate and Resolve Merge Conflict**:
    - [practice/week-02-simulate-and-resolve-merge-conflict](practice/week-02-simulate-and-resolve-merge-conflict/README.md)
    - Simulated parallel feature branches (`feature/task-notifications` and `feature/task-activity-audit`), merge conflict triggering in `tasks/services.py`, manual conflict marker removal, harmonious dual-feature integration, and clean merge commit into `main`.
+
+5. **Week 03 - Resolve Merge Conflict and Document Best Practices**:
+   - [practice/week-03-resolve-merge-conflict-and-document-best-practic](practice/week-03-resolve-merge-conflict-and-document-best-practic/README.md)
+   - Conflict resolution simulation between `feature/task-rate-limiting` and `feature/task-retry-policy` on `tasks/services.py`, manual conflict marker excision, and comprehensive repository-wide [CONTRIBUTING.md](CONTRIBUTING.md) guide covering 5 real-world merge conflict scenarios and Git hygiene best practices.
