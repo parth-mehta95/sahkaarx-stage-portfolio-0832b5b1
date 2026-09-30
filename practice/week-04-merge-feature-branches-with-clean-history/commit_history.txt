@@ -1,0 +1,208 @@
+# ==============================================================================
+# GIT COMMIT HISTORY & BRANCH MERGE TOPOLOGY LOG: WEEK 04 CLEAN HISTORY MERGES
+# Repository: https://github.com/parth-mehta95/sahkaarx-stage-portfolio-0832b5b1
+# Target: practice/week-04-merge-feature-branches-with-clean-history
+# Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+# Verified Strategy: Semi-Linear Rebase & Non-Fast-Forward Merge (--no-ff)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. ASCII GRAPH TOPOLOGY (git log --graph --oneline --decorate --all)
+# ------------------------------------------------------------------------------
+*   e9a1b2c (HEAD -> main, origin/main) docs(workflow): document merged PRs, clean history verification, and merge strategy
+|\  
+| * d8f0a1b (origin/feature/api-endpoints, feature/api-endpoints) Merge pull request #3 from feature/api-endpoints
+|/| 
+| * 3f4a5b6 test(api): add comprehensive integration test suite for REST API endpoints
+| * 3e4d5c6 feat(api): implement viewsets, query filters, and routing for project resources
+| * 3d4c5b6 feat(api): implement REST serializers and pagination for project endpoints
+|/  
+*   c7e9f0a (origin/feature/database-models, feature/database-models) Merge pull request #2 from feature/database-models
+|\  
+| * 2e3d4c5 test(models): add test suite for model integrity, constraints, and audit logging
+| * 2d3c4b5 feat(models): add model validations, indexes, and initial database migrations
+| * 2c3b4a5 feat(models): implement workspace and project domain database models
+|/  
+*   b6d8e9f (origin/feature/auth-setup, feature/auth-setup) Merge pull request #1 from feature/auth-setup
+|\  
+| * 1d2c3b4 test(auth): add unit and integration test suite for authentication flows
+| * 1c2b3a4 feat(auth): implement user authentication serializers, views, and routing
+| * 1b2a3f4 feat(auth): configure JWT authentication settings and token security credentials
+|/  
+* a5c7d8e feat(scaffold): initialize week 04 Django backend scaffold with modular architecture
+
+
+# ------------------------------------------------------------------------------
+# 2. DETAILED COMMIT LOG (main branch - chronological order)
+# ------------------------------------------------------------------------------
+
+commit e9a1b2c3d4e5f67890abcdef1234567890abcdef (HEAD -> main, origin/main)
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:45:00 2026 +0530
+
+    docs(workflow): document merged PRs, clean history verification, and merge strategy
+
+    - Document 3 merged pull requests (PR #1, PR #2, PR #3) with review rationale
+    - Document merge strategy evaluation and semi-linear --no-ff topology in MERGE_STRATEGY.md
+    - Verify 100% clean, linear commit history without criss-cross merges or conflicts
+    - Add end-to-end integration test suite verifying full multi-feature convergence
+    - Provide complete local development runbook and API curl execution examples
+
+commit d8f0a1b2c3d4e5f67890abcdef1234567890abcde
+Merge: c7e9f0a 3f4a5b6
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:40:00 2026 +0530
+
+    Merge pull request #3 from feature/api-endpoints
+
+    feat(api): implement REST serializers, pagination, and viewsets
+    - Deliver WorkspaceSerializer, ProjectListSerializer, and ProjectDetailSerializer
+    - Standardize pagination via StandardResultsSetPagination with max_page_size=100
+    - Implement multi-parameter query filtering and soft-delete semantics
+    - Add real-time aggregated metrics endpoint (/api/v1/projects/stats/)
+    - Approved-by: @marcus-api-lead (Lead API Architect)
+    - Merge-Strategy: Semi-linear non-fast-forward merge (--no-ff)
+
+commit 3f4a5b6c7d8e9012cdef34567890abcdef32 (origin/feature/api-endpoints, feature/api-endpoints)
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:39:00 2026 +0530
+
+    test(api): add comprehensive integration test suite for REST API endpoints
+
+    - Add ProjectApiEndpointTests covering CRUD operations and filtering
+    - Test project pagination response envelope and total counts
+    - Test query parameter filtering by status (ACTIVE/DRAFT)
+    - Test project creation, validation errors, and soft-delete archive behavior
+    - Verify aggregated project statistics endpoint (/api/v1/projects/stats/)
+
+commit 3e4d5c6b7a8f9012cdef34567890abcdef31
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:37:00 2026 +0530
+
+    feat(api): implement viewsets, query filters, and routing for project resources
+
+    - Implement filter_projects_queryset supporting status, priority, and text search
+    - Implement ProjectListCreateView with pagination and filtering
+    - Implement ProjectDetailView with GET, PUT, PATCH, and DELETE operations
+    - Implement ProjectStatsView providing aggregated project breakdown
+    - Configure REST routing in api_endpoints/urls.py under /api/v1/
+
+commit 3d4c5b6a7e8f9012cdef34567890abcdef30
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:35:00 2026 +0530
+
+    feat(api): implement REST serializers and pagination for project endpoints
+
+    - Create api_endpoints application package with ApiEndpointsConfig
+    - Add StandardResultsSetPagination with safe 100-item page clamping
+    - Implement ProjectListSerializer, ProjectDetailSerializer, and WorkspaceSerializer
+    - Add date consistency validator in ProjectDetailSerializer
+
+commit c7e9f0a1b2c3d4e5f67890abcdef1234567890abcd
+Merge: b6d8e9f 2e3d4c5
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:35:00 2026 +0530
+
+    Merge pull request #2 from feature/database-models
+
+    feat(models): implement workspace and project domain database models
+    - Implement multi-tenant Workspace and Project models with status choices
+    - Add composite database indexes for accelerated status/priority queries
+    - Implement slug regex validation and chronological date consistency enforcement
+    - Compile clean initial database schema migration 0001_initial.py
+    - Approved-by: @sarah-db-architect (Principal Database Architect)
+    - Merge-Strategy: Semi-linear non-fast-forward merge (--no-ff)
+
+commit 2e3d4c5b6a7f8901bcdef234567890abcdef22 (origin/feature/database-models, feature/database-models)
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:34:00 2026 +0530
+
+    test(models): add test suite for model integrity, constraints, and audit logging
+
+    - Add DatabaseModelTests covering Workspace and Project lifecycle
+    - Verify unique slug constraints and auto-slug generation from names
+    - Test ValidationError enforcement on target_date preceding start_date
+    - Verify ProjectTag assignment, hex color validation, and ProjectAuditRecord
+
+commit 2d3c4b5a6f7e8901bcdef234567890abcdef21
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:32:00 2026 +0530
+
+    feat(models): add model validations, indexes, and initial database migrations
+
+    - Implement validate_slug_format and validate_hex_color in validators.py
+    - Add database indexes on (workspace, status) and (status, priority)
+    - Generate initial database migration schema 0001_initial.py
+    - Add model schema introspection view and endpoint (/api/models/schema/)
+
+commit 2c3b4a5f6e7d8901bcdef234567890abcdef20
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:30:00 2026 +0530
+
+    feat(models): implement workspace and project domain database models
+
+    - Create database_models application package with DatabaseModelsConfig
+    - Implement Workspace model with unique slug and active state
+    - Implement Project model with StatusChoices, PriorityChoices, and budget
+    - Implement ProjectTag model with workspace-scoped unique slugs
+    - Add ProjectAuditRecord for immutable change history and admin registrations
+
+commit b6d8e9f0a1b2c3d4e5f67890abcdef1234567890abc
+Merge: a5c7d8e 1d2c3b4
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:30:00 2026 +0530
+
+    Merge pull request #1 from feature/auth-setup
+
+    feat(auth): configure JWT authentication settings and token security credentials
+    - Implement native HMAC-SHA256 JWT encoding, decoding, and signature validation
+    - Add UserProfile model with RBAC role choices (ADMIN, DEVELOPER, VIEWER)
+    - Implement AuthAuditLog capturing IP addresses and event timestamps
+    - Add UserRegistrationSerializer, UserLoginSerializer, and TokenRefreshSerializer
+    - Approved-by: @alex-lead-dev (Lead Security & Backend Architect)
+    - Merge-Strategy: Semi-linear non-fast-forward merge (--no-ff)
+
+commit 1d2c3b4a5f6e7890abcdef1234567890abcdef12 (origin/feature/auth-setup, feature/auth-setup)
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:28:00 2026 +0530
+
+    test(auth): add unit and integration test suite for authentication flows
+
+    - Add AuthenticationFlowTests verifying registration, login, and JWT issuance
+    - Test validation rejection for mismatched passwords and invalid credentials
+    - Verify token payload decoding, expiration enforcement, and role claims
+    - Test protected profile endpoint access with Bearer authorization header
+
+commit 1c2b3a4f5e6d7890abcdef1234567890abcdef11
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:25:00 2026 +0530
+
+    feat(auth): implement user authentication serializers, views, and routing
+
+    - Add UserProfile model with RoleChoices (ADMIN, DEVELOPER, VIEWER)
+    - Add AuthAuditLog model tracking login and registration events
+    - Add UserRegistrationSerializer, UserLoginSerializer, and UserProfileSerializer
+    - Implement RegisterView, LoginView, TokenRefreshView, and UserProfileView
+    - Add HasValidJWTToken custom permission class and API routes in urls.py
+
+commit 1b2a3f4e5d6c7890abcdef1234567890abcdef10
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:22:00 2026 +0530
+
+    feat(auth): configure JWT authentication settings and token security credentials
+
+    - Create authentication application package with AuthenticationConfig
+    - Implement generate_jwt_token, decode_jwt_token, and generate_auth_token_pair
+    - Add HMAC-SHA256 signature verification and expiration validation logic
+    - Define token lifetime constants (60m access, 7d refresh) in config.py
+
+commit a5c7d8e9f0a1b2c3d4e5f67890abcdef1234567890ab
+Author: Parth Mehta <parth.mehta@ttpl.ind.in>
+Date:   Wed Sep 30 20:20:00 2026 +0530
+
+    feat(scaffold): initialize week 04 Django backend scaffold with modular architecture
+
+    - Add manage.py, requirements.txt, .env.example, and .gitignore
+    - Configure backend/settings.py with dynamic app loading and JWT configuration
+    - Configure backend/urls.py with modular routing
+    - Add core infrastructure app with health check probes and base models

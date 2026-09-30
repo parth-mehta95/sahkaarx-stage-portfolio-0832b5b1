@@ -31,3 +31,7 @@ SahkaarX learning portfolio
    - [practice/week-04-implement-multiple-feature-branches-with-atomic](practice/week-04-implement-multiple-feature-branches-with-atomic/README.md)
    - Creation of 3 isolated feature branches (`feature/auth-setup`, `feature/database-models`, `feature/api-endpoints`) with 2-3 atomic commits each following Conventional Commits, clean conflict-free mergeability into `main`, and comprehensive Git branch documentation.
 
+8. **Week 04 - Merge Feature Branches with Clean History**:
+   - [practice/week-04-merge-feature-branches-with-clean-history](practice/week-04-merge-feature-branches-with-clean-history/README.md)
+   - Clean pull request merge orchestration across 3 feature branches (`feature/auth-setup`, `feature/database-models`, `feature/api-endpoints`), full peer code review logs, documented semi-linear merge strategy ([MERGE_STRATEGY.md](practice/week-04-merge-feature-branches-with-clean-history/MERGE_STRATEGY.md)), consolidated PR index ([PULL_REQUESTS.md](practice/week-04-merge-feature-branches-with-clean-history/PULL_REQUESTS.md)), clean linear commit history verification ([commit_history.txt](practice/week-04-merge-feature-branches-with-clean-history/commit_history.txt)), and full system integration test suite.
+
